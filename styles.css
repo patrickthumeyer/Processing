@@ -1,0 +1,213 @@
+/* Generic styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+​h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+​ ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Main Styles */
+
+body {
+  background-color: mistyrose;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 350px;
+  height: 350px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+img {
+  width: 100px;
+  position: absolute;
+  transform: translateX(230px);
+}
+
+img:nth-child(5) {
+  transform: translateY(-230px);
+}
+
+.step1 {
+  animation-name: step1-animation;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
+.step2 {
+  animation-name: step1-animation;
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+
+.step3 {
+  animation-name: step1-animation;
+  animation-duration: 1s;
+  animation-delay: 3s;
+}
+
+.step4 {
+  animation-name: step1-animation;
+  animation-duration: 1s;
+  animation-delay: 4s;
+}
+
+.step5 {
+  animation-name: step5-animation;
+  animation-duration: 1s;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.processing {
+  animation-name: processing-animation;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  transform: translate(30px, 80px);
+  font-size: 1.6rem;
+  opacity: 0;
+}
+
+.done {
+  animation-name: done-animation;
+  animation-delay: 5s;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  transform: translate(-38px, 80px);
+  font-size: 1.6rem;
+  opacity: 0;
+}
+
+@keyframes step1-animation {
+  0% {
+    transform: translateX(260px);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  60% {
+    /* transform: translateZ(-20px); */
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: translateX(-300px) scale(0.8);
+    /* transform: translateZ(-20px); */
+  }
+}
+
+@keyframes step5-animation {
+  0% {
+    transform: translateY(-220px);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  45% {
+    transform: translateY(-40px);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateY(-20px);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes processing-animation {
+  0% {
+    transform: translate(30px, 80px);
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes done-animation {
+  0% {
+    transform: translate(-38px, 80px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
